@@ -59,9 +59,9 @@ $(document).ready(function() {
                         console.log("done");
                     },
                     error: function(jqXHR, status, error) {
-                        //                        var a = JSON.parse(jqXHR.responseText);
-                        //                        console.log(a, status, error);
-                        //                        window.alert(jqXHR.status + " : " + a.message);
+                        var a = JSON.parse(jqXHR.responseText);
+                        console.log(a, status, error);
+                        window.alert(jqXHR.status + " : " + a.message);
                     }
                 });
             }
@@ -108,16 +108,22 @@ $(document).ready(function() {
     });
 
 
-$("#saveFly").on('click', function(e) {
+    $("#saveFly").on('click', function(e) {
         var methodUsed = 'PUT';
         var urlAddEdit = 'http://localhost:8080/api/airplane/';
         if (!validate()) return;
         e.preventDefault();
+
         var selectedAirfield = $('#newAirfieldFly option:selected').val();
         var fuelAmount = 0;
-        if(parseInt($('#fuel').val()) >= 2){
+        if ($('#newAirfieldFly option:selected').val() == $('#currentAirfieldFly option:selected').val()) {
+            window.alert("Please select a different destination.");
+            return;
+        }
+
+        if (parseInt($('#fuel').val()) >= 2) {
             fuelAmount = parseInt($('#fuel').val()) - 2;
-        }else{
+        } else {
             window.alert("Not enough fuel, you need to fuel up first.");
             return;
         }

@@ -17,8 +17,9 @@
 </head>
 
 <body>
-    <button type="button" data-action="add" name="addNew" id="addNew" data-toggle="modal" data-target="#edit_modal" class="btn btn-success">Add New</button>
+
     <div class="container">
+        <button type="button" data-action="add" name="addNew" id="addNew" data-toggle="modal" data-target="#edit_modal" class="btn btn-success">Add New</button>
         <div class="table-responsive">
             <table id="airplaneTable" class="table table-striped table-bordered" style="width:100%">
 
@@ -70,7 +71,7 @@
                         <div class="modal-footer">
                             <label id="messageLabel"></label>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <input type="submit" name="saveAirplane" id="saveAirplane" value="Save" data-dismiss="modal" class="btn btn-success" />
+                            <input type="submit" name="saveAirplane" id="saveAirplane" value="Save" class="btn btn-success" />
 
                         </div>
                     </form>
@@ -115,7 +116,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="submit" name="saveFly" id="saveFly" data-dismiss="modal" class="btn btn-success">Fly Me</button>
+                            <button type="submit" name="saveFly" id="saveFly" class="btn btn-success">Fly Me</button>
 
                         </div>
                     </form>
