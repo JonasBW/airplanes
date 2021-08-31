@@ -38,6 +38,7 @@ $(document).ready(function() {
                 dataType: "json",
                 data: airplaneInformation,
                 success: function(result) {
+                setTimeout($('#edit_modal').modal('hide'), 1500);
                     //                        reloadAirplanes();
                 },
                 error: function(jqXHR, status, error) {
@@ -97,6 +98,7 @@ $(document).ready(function() {
             data: airplaneInformation,
             success: function(result) {
                 reloadAirplanes();
+                setTimeout($('#edit_modal').modal('hide'), 1500);
             },
             error: function(jqXHR, status, error) {
                 var a = JSON.parse(jqXHR.responseText);
@@ -144,6 +146,7 @@ $(document).ready(function() {
             data: airplaneInformation,
             success: function(result) {
                 reloadAirplanes();
+                setTimeout($('#fly_modal').modal('hide'), 1500);
             },
             error: function(jqXHR, status, error) {
                 var a = JSON.parse(jqXHR.responseText);
