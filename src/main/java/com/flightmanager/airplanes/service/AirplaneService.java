@@ -1,5 +1,6 @@
 package com.flightmanager.airplanes.service;
 
+import com.flightmanager.airplanes.exception.MyException;
 import com.flightmanager.airplanes.model.Airplane;
 import com.flightmanager.airplanes.repository.AirplaneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +15,20 @@ public class AirplaneService {
         return this.airplaneRepository.findAll();
     }
 
-    public Airplane addNewPlane(Airplane airplane) {
-        return this.airplaneRepository.save(airplane);
+    public Airplane addNewPlane(Airplane airplane) throws MyException {
+        if (!this.airplaneRepository.existsByAirplanePlateNo(airplane.getAirplanePlateNo())) {
+            return this.airplaneRepository.save(airplane);
+        }else{
+            throw new MyException("An airplane with the same identification plate already exists.");
+        }
     }
 
-    public Airplane updatePlane(Airplane airplane) {
-        return this.airplaneRepository.save(airplane);
+    public Airplane updatePlane(Airplane airplane) throws MyException {
+        if (this.airplaneRepository.existsById(airplane.getId())) {
+            return this.airplaneRepository.save(airplane);
+        }else{
+            throw new MyException("The airplane was not found.");
+        }
     }
 
     public void deletePlane(Airplane airplane) {

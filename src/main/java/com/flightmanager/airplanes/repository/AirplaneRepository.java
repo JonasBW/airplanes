@@ -9,4 +9,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Repository
 public interface AirplaneRepository extends CrudRepository<Airplane, Integer> {
+    boolean existsByAirplanePlateNo(String airplanePlateNo);
 }

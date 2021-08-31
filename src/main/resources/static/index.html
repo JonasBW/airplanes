@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -11,15 +12,121 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="airplane.js"></script>
-    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Airplanes</title>
 </head>
-<body>
-<div class="container">
-    <div class="table-responsive">
-        <table id="airplaneTable" class="table table-striped table-bordered" style="width:100%">
 
-        </table>
+<body>
+    <button type="button" data-action="add" name="addNew" id="addNew" data-toggle="modal" data-target="#edit_modal" class="btn btn-success">Add New</button>
+    <div class="container">
+        <div class="table-responsive">
+            <table id="airplaneTable" class="table table-striped table-bordered" style="width:100%">
+
+            </table>
+        </div>
     </div>
-</div>
+
+    <!-- Editing form modal -->
+    <div id="edit_modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Airplane</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="update_form">
+                        <div>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+                        <div class="form-group">
+                            <label for="id">Airplane No</label><br>
+                            <input id="id" name="id" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Airplane type</label><br>
+                            <input id="airplaneType" name="airplaneType" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="airplanePlateNo">Airplane Identification No:</label><br>
+                            <input id="airplanePlateNo" name="airplanePlateNo" type="text" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentAirfield">Current Airfield</label>
+                            <select class="form-control" id="currentAirfield" name="currentAirfield" class="required">
+                                    <option>Select....</option>
+                                    <option value="Amsterdam">Amsterdam</option>
+                                    <option value="Parijs" selected>Parijs</option>
+                                    <option value="Berlijn" selected>Berlijn</option>
+                                    <option value="Stockholm" selected>Stockholm</option>
+                                    <option value="London" selected>London</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Fuel in ton</label><br>
+                            <input id="fuel" name="fuel" type="text" required>
+                        </div>
+
+                        <div class="modal-footer">
+                            <label id="messageLabel"></label>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <input type="submit" name="saveAirplane" id="saveAirplane" value="Save" data-dismiss="modal" class="btn btn-success" />
+
+                        </div>
+                    </form>
+                </div>
+                <!-- .modal-body -->
+            </div>
+            <!-- .modal-content -->
+        </div>
+        <!-- .modal-dialog -->
+    </div>
+    <!-- .modal -->
+
+    <div id="fly_modal" class="modal fade ">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Airplane</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="fly_form">
+                        <div class="form-group">
+                            <label for="currentAirfieldFly">Current Airfield</label>
+                            <select class="form-control" id="currentAirfieldFly" name="currentAirfieldFly" class="required">
+                            <option>Select....</option>
+                            <option value="Amsterdam">Amsterdam</option>
+                            <option value="Parijs" selected>Parijs</option>
+                            <option value="Berlijn" selected>Berlijn</option>
+                            <option value="Stockholm" selected>Stockholm</option>
+                            <option value="London" selected>London</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="newAirfieldFly">Fly to Airfield</label>
+                            <select class="form-control" id="newAirfieldFly" name="newAirfieldFly" class="required">
+                            <option>Select....</option>
+                            <option value="Amsterdam">Amsterdam</option>
+                            <option value="Parijs" selected>Parijs</option>
+                            <option value="Berlijn" selected>Berlijn</option>
+                            <option value="Stockholm" selected>Stockholm</option>
+                            <option value="London" selected>London</option>
+                        </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" name="saveFly" id="saveFly" data-dismiss="modal" class="btn btn-success">Fly Me</button>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- .modal-body -->
+            </div>
+            <!-- .modal-content -->
+        </div>
+        <!-- .modal-dialog -->
+    </div>
+    <!-- .modal -->
 </body>
+
 </html>
