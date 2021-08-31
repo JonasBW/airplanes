@@ -42,11 +42,11 @@ public class Airplane {
         this.airplaneType = airplaneType;
     }
 
-    public String getAirPlanePlateNo() {
+    public String getAirplanePlateNo() {
         return airplanePlateNo;
     }
 
-    public void setAirPlanePlateNo(String airplanePlateNo) {
+    public void setAirplanePlateNo(String airplanePlateNo) {
         this.airplanePlateNo = airplanePlateNo;
     }
 

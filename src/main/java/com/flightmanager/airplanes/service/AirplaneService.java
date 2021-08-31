@@ -25,4 +25,8 @@ public class AirplaneService {
     public void deletePlane(Airplane airplane) {
         this.airplaneRepository.delete(airplane);
     }
+
+    public void flyPlane(Airplane airplane) {
+        this.airplaneRepository.save(airplane);
+    }
 }

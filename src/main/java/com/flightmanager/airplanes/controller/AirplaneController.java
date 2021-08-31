@@ -30,4 +30,9 @@ public class AirplaneController {
     public void removePlane(@RequestBody Airplane airplane){
         this.airplaneService.deletePlane(airplane);
     }
+
+    @PutMapping("fly")
+    public void flyPlane(@RequestBody Airplane airplane){
+        this.airplaneService.flyPlane(airplane);
+    }
 }

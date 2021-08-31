@@ -19,9 +19,9 @@ public class AirplanesApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		airplaneService.addNewPlane(new Airplane(0,"Air bus","A301","Berlijn",5));
-		airplaneService.addNewPlane(new Airplane(0,"Air bus","A302","London,",5));
-		airplaneService.addNewPlane(new Airplane(0,"Air bus","A303","Stockholm,",5));
-		airplaneService.addNewPlane(new Airplane(0,"Air bus","A304","Parijs,",5));
+		airplaneService.addNewPlane(new Airplane(0,"Air bus","A302","London",5));
+		airplaneService.addNewPlane(new Airplane(0,"Air bus","A303","Stockholm",5));
+		airplaneService.addNewPlane(new Airplane(0,"Air bus","A304","Parijs",5));
 		airplaneService.addNewPlane(new Airplane(0,"Air bus","A305","Amsterdam",5));
 	}
 }
